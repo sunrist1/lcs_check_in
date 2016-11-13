@@ -1,0 +1,483 @@
+@import './init.scss';
+
+.body_content{
+	width:100%;
+	font-size:0px;
+}
+.top_half{
+	background-color:$scarlet;
+	width:100%;
+	min-height:350px;
+	padding-bottom:0.1rem;
+}
+
+.top_bar{
+	padding:10px;
+	width:100%;
+	position: relative;
+
+	.ruleImg{
+		width:0.8rem;
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	.notice_set{
+		position:absolute;
+		top:10px;
+		right: 25px;
+		display: inline-block;
+		vertical-align: middle;
+		label{
+			font-size: 0.15rem;
+			color:#fff;
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin-right: 5px;
+		}
+
+		input[type='checkbox']{
+			display: none;
+		}
+
+		.btn_group{
+			vertical-align: middle;
+			display: inline-block;
+			width:0.35rem;
+			background-color:#e6e6e6;
+			height: 18px;
+			border-radius:10px;
+			vertical-align: middle;
+			position:relative;
+
+			.circle{
+				position:absolute;
+				height: 18px;
+				width:18px;
+				border:1px solid #eee;
+				background-color: #fff;
+				border-radius:9px;
+				top:-1px;
+				left:-2px;
+				box-sizing:border-content;
+			}
+		}
+
+		input[type='checkbox']:checked+.btn_group{
+			background-color:#ffed29;
+			.circle{
+				top:-1px;
+				left:0.2rem;
+			}
+		}
+	}
+
+}
+
+.check_logo{
+	width:90%;
+	display: block;
+	margin:0.4rem auto;
+}
+
+
+.check_in_box{
+	position:relative;
+	width:92%;
+	margin:0.7rem auto 0;
+	.bg_img{
+		width: 100%;
+		height: auto;
+	}
+
+	.day_box{
+		position:absolute;
+		top:0px;
+		// display: flex;
+		// display: -webkit-flex;
+		// justify-content: space-around;
+		// flex-wrap:wrap;
+		// align-items:center;
+		// align-content:stretch;
+		@include transform(translateY(-50px));
+    width: 100%;
+
+		// border:1px solid #eee;
+
+		.day_box_item{
+			padding:0px 0.1rem;
+			box-sizing:border-box;
+			width:100%;
+	    display: flex;
+	    justify-content: space-around;
+      align-items: flex-end;
+
+      &:nth-of-type(2){
+      	align-items: center;
+      }
+		}
+
+		@at-root .day_item{
+			position:absolute;
+			text-align:center;
+			// border:1px solid #eee;
+			width:20%;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+			p{
+				font-size: 0.12rem;
+				text-align: center;
+				color:#fff;
+				margin:0px;
+			}
+			img{
+				width:90%;
+			}
+
+			&:nth-of-type(1){
+				padding-bottom: 5px;
+			}
+		}
+		@at-root .box{
+			img{
+					width:100%;
+			    min-width: 65px;
+				}
+		}
+	}
+}
+
+.coin_img{
+	width:0.28rem;
+	height: auto;
+}
+
+.myCoins{
+	display:block;
+	margin:0.5rem auto 0.2rem;
+	text-align:center;
+	font-size:0.15rem;
+	color:#fff;
+
+	img{
+		vertical-align: bottom;
+		@extend .coin_img;
+	}
+
+	.coin_num{
+		font-size: 0.25rem;
+		margin:0px 5px;
+		color:#fbf75b;
+		vertical-align: bottom;
+	}
+}
+
+.check_in_btn{
+	display:block;
+	margin:0rem auto;
+	width:1.8rem;
+	height:0.4rem;
+	background-color:#fffbb2;
+	border:none;
+	border-radius:8px;
+	font-size:0.18rem;
+	color:$scarlet;
+}
+
+.scrolldown_btn{
+	display:block;
+	margin:0.2rem auto;
+
+	@include animation(up_and_down 1s infinite);
+}
+
+.bottom_half{
+	background-color:$bg_purple;
+	width:100%;
+	.select_bar{
+		height: 0.4rem;
+		line-height: 0.4rem;
+		width:100%;
+		.select_item{
+			display: inline-block;
+			width:50%;
+			font-size: 0.16rem;
+			text-align:center;
+			color:#fff;
+			border-bottom:1px solid #fff;
+		}
+		.active{
+			color:$scarlet;
+			border-bottom:1px solid $scarlet;
+		}
+	}
+
+	.prize_list{
+		display: flex;
+		justify-content: space-around;
+		.prize_item{
+			width:45%;
+			margin:0.1rem 2%;
+			height: 0.8rem;
+			background-position: 0px 0px;
+			background-repeat:no-repeat;
+			background-size:contain;
+		}
+		.raffle_link{
+			background-image:url(/public/mobile/images/checkin/raffle_img.png);
+		}
+		.prize_bag{
+			background-image:url(/public/mobile/images/checkin/prize_bag.png);
+			background-position:50% 50%;
+		}
+	}
+
+	.achieved_list{
+		width:100%;
+		padding:0.1rem;
+    box-sizing: border-box;
+		.achieved_item{
+			display: inline-block;
+			width:48%;
+			height: 1rem;
+			background-color:#fff;
+
+			&:nth-of-type(2n){
+				margin-left: 4%;
+			}
+		}
+	}
+} 
+
+.dialog_close_btn{
+  background: url(/public/mobile/images/checkin/close_btn.png) 45% 0px no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  bottom: -0.7rem;
+  z-index: 131;
+  height: 0.35rem;
+  width: 50%;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.rule_box{
+	display:none;
+	position:fixed;
+	z-index:100;
+	width:80%;
+	left:10%;
+	top:15%;
+	background-color:$cherry_red;
+	color:#fff;
+	padding:0.1rem;
+	box-sizing:border-box;
+	border-radius:0.1rem;
+
+	&:after{
+		content: "";
+		position:absolute;
+		z-index: 111;
+    height: 0.4rem;
+    left: 0.1rem;
+    bottom: .35rem;
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(219,3,44,0)),color-stop(.8,rgba(219,3,44,1)),color-stop(1,$cherry_red),to($cherry_red));
+    display: block;
+    width: 95%;
+	}
+
+	.title{
+		width:100%;
+		line-height: 0.4rem;
+		text-align: center;
+		font-size: 0.2rem;
+	}
+
+	.rule_content{
+		height: 2rem;
+		overflow: scroll;
+    padding-left: 0.2rem;
+		margin:0px;
+		padding-bottom:0.5rem;
+		box-sizing:border-box;
+
+		&::-webkit-scrollbar{
+			width:0.02rem;
+		}
+		&::-webkit-scrollbar-thumb{
+			background-color:#f7f29b;
+		}
+		&::-webkit-scrollbar-track{
+			background-color:$cherry_red;
+		}
+		li{
+	    list-style:disc outside;
+	    font-size: 0.11rem;
+	    line-height: 0.2rem;
+	    padding-right:0.02rem;
+		}
+
+	}
+	.down_icon{
+		display: block;
+    margin: 0.1rem auto;
+    width: 0.2rem;
+	}
+}
+
+.receive_info_box{
+	display:none;
+	position:fixed;
+	z-index:100;
+	width:80%;
+	left:10%;
+	top:15%;
+	background-color:#fff;
+	border-radius:0.1rem;
+	box-sizing:border-box;
+
+	.edit_content{
+		padding-bottom:0.1rem;
+	}
+
+	.title{
+		background-color:#eee;
+		font-size:0.18rem;
+		height: 0.4rem;
+		line-height:0.4rem;
+		text-align: center;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+	}
+
+	.input_group{
+		font-size: 0.15rem;
+		margin:0.1rem;
+		border-bottom:1px solid #eee;
+
+		&:nth-of-type(3){
+			border:none;
+		}
+
+		label{
+			display: inline-block;
+			min-width:0.6rem;
+		}
+		input{
+			vertical-align: middle;
+			border:none;
+			font-size: 0.15rem;
+			width:50%;
+		}
+		textarea{
+	    border: 1px solid #eee;
+	    width: 95%;
+	    height: 1rem;
+	    resize: none;
+	    font-size: 0.15rem;
+	    margin-top:0.05rem;
+		}
+	}
+
+	.sub_btn{
+		width:90%;
+		margin:0px auto;
+		height: 0.3rem;
+		display: block;
+		border:none;
+		border-radius:0.05rem;
+		background-color:$cherry_red;
+		color:#fff;
+		font-size: 0.15rem;
+	}
+}
+
+.continuous_notice_box{
+	display:none;
+	position:fixed;
+	z-index:100;
+	width:80%;
+	left:10%;
+	top:20%;
+	background-color:#e8e8e8;
+	border-radius: 0.1rem;
+
+	.notice_top_half{
+		min-height: 0px;
+		background-color:#e8e8e8;
+		box-sizing:border-box;
+		padding:0.1rem;
+		height: auto;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+		p{
+			text-align: center;
+			margin:0px;
+			font-size: 0.14rem;
+			line-height:0.25rem;
+			img{
+				vertical-align: middle;
+			}
+			.purple_word{
+				color:$word_purple;
+				font-size: 0.2rem;
+			}
+			&:nth-of-type(1){
+				color:$word_purple;
+				font-size: 0.24rem;
+				font-weight: 900;
+
+				img{
+					width:0.4rem;
+					height: auto;
+				}
+			}
+		}
+	}
+	.notice_bottom_half{
+		background-color:#fff;
+		min-height: 0px;
+		height: auto;
+		font-size: 0.12rem;
+		text-align: center;
+		padding:0.05rem;
+		box-sizing:border-box;
+		border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+
+		img{
+			vertical-align: middle;
+			width: 0.2rem;
+		}
+	}
+}
+
+// spin class
+.spin_class{
+	@include animation(spin 1s);
+}
+
+// up and down animation
+@keyframes up_and_down{
+	from{
+		@include transform(translateY(-5px));
+		opacity:0.7;
+	}
+	to{
+		@include transform(translateY(5px));
+		opacity:1;
+	}
+}
+
+// soin animation 
+@keyframes spin{
+	from{
+		@include transform(rotateY(0deg))
+	}
+	to{
+		@include transform(rotateY(720deg))
+	}
+}

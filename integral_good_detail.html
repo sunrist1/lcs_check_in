@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的商城</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <link rel="stylesheet" href="./sources/style/public/integral_good_detail.css"> -->
+	<link rel="stylesheet" href="/public/mobile/css/integral_shop/integral_good_detail.css">
+</head>
+<body>
+	<!-- 可兑换最大数量 -->
+	<input type="hidden" id="maxExChangeCount" value="10">
+
+	<div class="body_content">
+		<!-- 商品图片和信息 -->
+		<div class="top_box">
+			<div class="img_model">
+				<img src="/sources/images/integral_shop/jd_1000.png" alt="">
+			</div>
+			<div class="good_info">
+				<span class="good_name">京东购物卡1000元</span>
+				<span class="good_cost">1000金币</span>
+			</div>
+		</div>
+
+		<!-- 填写收货地址 -->
+		<div class="reciver_info clr">
+			<div class="input_group">
+				<label for="">兑换数量:</label>
+				<input type="tel" id="exchange_count" placeholder="请输入兑换数量">
+
+				<!-- 我的积分 -->
+				<span class="coins_sum">金币总数:<span class="cherry_red">0</span></span>
+			</div>
+			<div class="input_group">
+				<label for="">收 货 人:</label>
+				<input type="text" id="receiver_name" placeholder="请输入收货人性名">
+			</div>
+			<div class="input_group">
+				<label for="">联系电话:</label>
+				<input type="tel" id="receiver_phone" placeholder="请输入收货人联系电话">
+			</div>
+			<div class="input_group">
+				<label for="">收货人地址:</label>
+				<textarea name="" id="receiver_addr" placeholder="请输入详细地址" id="" cols="30" rows="10"></textarea>
+			</div>
+			<div class="input_group">
+				<label for="">备注:</label>
+				<textarea name="" placeholder="备注" id="receiver_remark" cols="30" rows="3"></textarea>
+			</div>
+		</div>
+		
+		<!-- 兌換按鈕 -->
+		<button id="exchange_btn" class="exchange_btn">我要兑换</button>
+	</div>
+
+	<script src="/public/mobile/js/jquery-3.1.0.min.js"></script>
+	<script src="/public/mobile/js/layer.js"></script>
+	<script src="/public/mobile/js/web/common.js"></script>
+	<script src="/public/mobile/js/integral_shop/integral_good_detail.js"></script>
+
+<!-- 	<script src="./sources/scripts/jquery-3.1.0.min.js"></script>
+<script src="./sources/scripts/layer.js"></script>
+<script src="./sources/scripts/common.js"></script>
+<script src="./sources/scripts/integral_good_detail.js"></script> -->
+</body>
+</html>

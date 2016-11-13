@@ -1,0 +1,109 @@
+@import './init.scss';
+
+body{
+	background-color:#eee;
+}
+
+.clr{
+	clear:both;
+}
+
+.top_box{
+	background-color:#fff;
+	padding-top:1rem;
+
+	.img_model{
+		width:100%;
+		border-bottom:2px solid #eee;
+		>img{
+			width: 50%;
+			margin:0rem auto 1rem;
+			display: block;
+		}
+	}
+
+	.good_info{
+		font-size: 0.9rem;
+		height: 2.2rem;
+		padding:0px 0.7rem;
+		>span{
+	    height: 2.2rem;
+	    line-height: 2.2rem;
+		}
+
+		.good_name{
+			float:left;
+		}
+		.good_cost{
+			float:right;
+			color:$cherry_red;
+			font-weight: bold;
+		}
+	}
+}
+
+.reciver_info{
+	margin-top:1rem;
+	background-color:#fff;
+	padding:0.5rem;
+
+	.input_group{
+		min-height: 2rem;
+		line-height: 2rem;
+		color:#333;
+		font-size: 1rem;
+		padding:0px 0.5rem;
+		border-bottom:1px solid #eee;
+		position:relative;
+		&:last-child{
+			border-bottom:none;
+		}
+
+		label{
+			vertical-align: middle;
+			height: 2.4rem;
+			line-height: 2.4rem;
+		}
+		input{
+			font-size: 0.9rem;
+			height: 2rem;
+			border:none;
+			vertical-align: middle;
+		}
+		textarea{
+			display: block;
+			width:100%;
+			border:1px solid #eee;
+			resize : none;
+			padding:0.5rem;
+			font-size: 0.9rem;
+			box-sizing:border-box;
+		}
+
+		.coins_sum{
+			position: absolute;
+			right: 0.5rem;
+			top:0;
+			height: 2.4rem;
+	    line-height: 2.4rem;
+			font-size:0.9rem;
+
+			.cherry_red{
+				color:$cherry_red;
+				margin:0px 0.2rem;
+			}
+		}
+	}
+}
+
+.exchange_btn{
+	width:90%;
+	display:block;
+	margin:1rem auto;
+	background-color:$goldden;
+	border:none;
+	height:2rem;
+	font-size:1rem;
+	color:#fff;
+	border-radius:0.5rem;
+}

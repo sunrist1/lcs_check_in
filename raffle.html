@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></head>
+	<title>积分抽奖</title>
+	<!-- <link rel="stylesheet" href="./sources/style/public/sweetalert.css"> -->
+	<!-- <link rel="stylesheet" href="./sources/style/public/raffle.css"> -->
+	<link rel="stylesheet" href="/public/mobile/css/checkin/raffle.css">
+</head>
+<body>
+	<div class="body_content">
+		<img class="raffle_logo" src="/public/mobile/images/checkin/raffle_logo.png" alt="">
+
+		<!-- 抽奖框 -->
+		<div class="raffle_box">
+			<div class="top_bar">
+				<div class="item">
+					我的金币:<span class="yellow_b_word">100</span>
+				</div>
+				<div class="item">
+					今日可玩:<span class="yellow_b_word">3</span>次
+				</div>
+			</div>
+			
+
+			<!-- 抽奖转盘 -->
+			<div class="raffle_content" id="raffle_content">
+				<div class="raffle_pan" id="raffle_pan">
+					<div class="award_item award_item_0 gray_cover" data-name="iphone7手机" data-arard="1"></div>
+					<div class="award_item award_item_1 gray_cover" data-name="100积分" data-arard="2"></div>
+					<div class="award_item award_item_2 gray_cover" data-name="奖品1" data-arard="3"></div>
+					<div class="award_item award_item_7 gray_cover" data-name="奖品2" data-arard="8"></div>
+					<button id="raffle_btn" class="raffle_btn">立即<br/>抽奖</button>
+					<div class="award_item award_item_3 gray_cover" data-name="奖品3" data-arard="4"></div>
+					<div class="award_item award_item_6 gray_cover" data-name="随机积分" data-arard="7"></div>
+					<div class="award_item award_item_5 gray_cover" data-name="奖品4" data-arard="6"></div>
+					<div class="award_item award_item_4 gray_cover" data-name="奖品5" data-arard="5"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 抽奖规则 -->
+		<div class="rule_box">
+			<div class="title">
+				<div class="line"></div>
+				抽奖规则
+				<div class="line"></div>
+			</div>
+
+			<div class="rule_content">
+				<p>1、每次抽奖需要消耗10个金币，每人每天限抽3次，消耗的金币将不予退还;</p>
+				<p>2、如您抽奖的奖品为实物奖品，工作人员会致电您确认收货地址，在中奖后的7个工作日内为您安排寄送。抽中金币，会自动发放至您的账户的金币户中;</p>
+				<p>3、中奖商品不开具相应的发票，不可折现;如无质量问题，不支持退换货;</p>
+				<p>4、抽奖过程中，如发现违规行为(如恶意注册大量账号，使用作弊程序等),将取消您的中奖资格;</p>
+				<p>5、积分有效期截止到2016年12月31日;</p>
+			</div>  
+		</div>
+
+		<!-- 中奖提示 -->
+		<div class="prize_get_show dialog_box" id="prize_get_shows">
+			<p class="prize_text">抽中50个金币</p>
+			<img class="prize_get_btn dialog_close_btn" src="/public/mobile/images/checkin/raffle_check_btn.png" alt="">
+		</div>
+	</div>
+
+<!-- 	<script src="./sources/scripts/jquery-3.1.0.min.js"></script>
+	<script src="./sources/scripts/setRem.js"></script>
+	<script src="./sources/scripts/common.js"></script>
+	<script src="./sources/scripts/raffle.js"></script> -->
+
+		<script src="/public/mobile/js/jquery-3.1.0.min.js"></script>
+	<script src="/public/mobile/js/setRem.js"></script>
+	<script src="/public/mobile/js/layer.js"></script>
+	<script src="/public/mobile/js/web/common.js"></script>
+	<script src="/public/mobile/js/checkin/raffle.js"></script>
+</body>
+</html>

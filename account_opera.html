@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>理财师签到抽奖，积分兑换——登陆注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></head>
+	<link rel="stylesheet" href="/public/mobile/css/account/account_opera.css">
+	<!-- <link rel="stylesheet" href="./sources/style/public/account_opera.css"> -->
+</head>
+<body>
+	<section class="body_content">
+		<!-- 登陆start -->
+		<div class="login_content act_content">
+			<div class="sec_title">
+				登陆
+				<!-- <span class="back_btn"></span> -->
+				<!-- <span class="close_btn"></span> -->
+			</div>	
+
+			<div class="login_form">
+				<div class="ui_form">
+					<div class="ui_form_item">
+						<input type="tel" class="ui_input phone_num" placeholder="手机号码">
+					</div>
+					<div class="ui_form_item">
+						<input type="password" class="ui_input login_pwd" placeholder="登陆密码">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input verify_code_text" placeholder="验证码">
+						<img 
+							class="verify_code" 
+							src="http://192.168.1.229/mobile/code?code=login"
+							alt="">
+					</div>
+
+					<button class="ui_btn" id="goLogin">登陆</button>
+				</div>
+			</div>
+
+			<div class="other_opera">
+				<a href="#" id="go_reg">立即注册</a>
+				<span>|</span>
+				<a href="#" id="go_fgpw">忘记密码</a>
+			</div>
+		</div>
+		<!-- 登陆end -->
+
+		<!-- 注册start -->
+		<div class="reg_content">
+			<div class="sec_title">
+				注册
+				<span class="back_btn"></span>
+				<!-- <span class="close_btn"></span> -->
+			</div>	
+
+			<div class="register_form">
+				<div class="ui_form">
+					<div class="ui_form_item">
+						<input type="tel" class="ui_input phone_num" placeholder="手机号码">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input verify_code_text" placeholder="验证码">
+						<img 
+							class="verify_code" 
+							src="http://192.168.1.229/mobile/code?code=register" 
+							alt="">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input reg_phone_verify" placeholder="短信验证码">
+						<button id="registerGetVerify" class="get_verify_code">获取验证码</button>
+					</div>
+					<div class="ui_form_item">
+						<input type="password" class="ui_input reg_pwd" placeholder="登陆密码">
+					</div>
+					<div class="ui_form_item">
+						<input type="password" class="ui_input reg_confirm_pwd" placeholder="确认登陆密码">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input invitation_code" placeholder="邀请码(选填)">
+					</div>
+
+					<button class="ui_btn" id="goRegister">立即注册</button>
+				</div>
+			</div>
+
+			<div class="other_opera">
+				<span>已有账号,</span>
+				<a href="#" id="go_login">立即登陆</a>
+			</div>
+		</div>
+		<!-- 注册end -->
+
+		<!-- 找回密码start -->
+		<div class="fgpw_content">
+			<div class="sec_title">
+				找回密码
+				<span class="back_btn"></span>
+				<!-- <span class="close_btn"></span> -->
+			</div>	
+
+			<div class="fgpw_form">
+				<div class="ui_form">
+					<div class="ui_form_item">
+						<input type="tel" class="ui_input phone_num" placeholder="手机号码">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input verify_code_text" placeholder="验证码">
+						<img 
+							class="verify_code" 
+							src="http://192.168.1.229/mobile/code?code=register" 
+							alt="">
+					</div>
+					<div class="ui_form_item">
+						<input type="text" class="ui_input forget_phone_verify" placeholder="短信验证码">
+						<button id="fgpwGetVerify" class="get_verify_code">获取验证码</button>
+					</div>
+					<div class="ui_form_item">
+						<input type="password" class="ui_input new_pwd" placeholder="新登陆密码">
+					</div>
+					<div class="ui_form_item">
+						<input type="password" class="ui_input confirm_pwd" placeholder="确认新密码">
+					</div>
+
+					<button class="ui_btn" id="goFgpw">完成</button>
+				</div>
+			</div>
+		</div>
+		<!-- 找回密码end -->
+	</section>
+
+	<script src="/public/mobile/js/jquery-3.1.0.min.js"></script>
+<script src="/public/mobile/js/layer.js"></script>
+<script src="/public/mobile/js/web/common.js"></script>
+<script src="/public/mobile/js/account/account_opera.js"></script>
+<!-- 	<script src="./sources/scripts/jquery-3.1.0.min.js"></script>
+	<script src="./sources/scripts/layer.js"></script>
+	<script src="./sources/scripts/common.js"></script>
+	<script src="./sources/scripts/account_opera.js"></script> -->
+</body>
+</html>

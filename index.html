@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>理财师——签到</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <link rel="stylesheet" href="./sources/style/public/index.css"> -->
+	<link rel="stylesheet" href="/public/mobile/css/checkin/index.css">
+	<!-- <link rel="stylesheet" href="./sources/style/public/layer.css"> -->
+</head>
+<body onresize="changeCoinsPos()">
+	<div class="body_content">
+		<!-- 签到版块 -->
+		<div class="top_half">
+			<div class="top_bar">
+				<img id="ruleImg" class="ruleImg" src="/public/mobile/images/checkin/rule_icon.png" alt="">
+
+				<div class="notice_set">
+					<label for="notice_btn">签到提醒</label>
+					<input type="checkbox" name="notice_btn" id="notice_btn">
+					<label for="notice_btn" class="btn_group">
+						<div class="circle"></div>
+					</label>
+				</div>	
+			</div>
+
+			<img class="check_logo" src="/public/mobile/images/checkin/check_logo.png" alt="">
+
+			<!-- 签到循环 -->
+			<div class="check_in_box">
+				<img class="bg_img" id="check_bg_img" src="/public/mobile/images/checkin/check_in_kuan.png" alt="">
+				<div class="day_item day-0">
+					<img src="/public/mobile/images/checkin/check_in_man.png" alt="">
+				</div>
+				<div class="day_item day-1" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第1天</p>
+				</div>
+				<div class="day_item day-2" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第2天</p>
+				</div>
+				<div class="day_item day-3" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第3天</p>
+				</div>
+				<div class="day_item box" data-coins="15">
+					<img src="/public/mobile/images/checkin/gold_egg.png" alt="">
+					<p>第7天</p>
+				</div>
+				<div class="day_item day-6" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第6天</p>
+				</div>
+				<div class="day_item day-5" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第5天</p>
+				</div>
+				<div class="day_item day-4" data-coins="5">
+					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
+					<p>第4天</p>
+				</div>
+			</div>
+
+			<!-- 我的金币 -->
+			<div class="myCoins">
+				我的金币
+				<span class="coin_num">100</span>
+				<img id="coin_increse_des" src="/public/mobile/images/checkin/coin.png" alt="">
+			</div>
+			<!-- 立即签到 -->
+			<button class="check_in_btn">立即签到</button>
+
+			<!-- 向下滑 -->
+			<img class="scrolldown_btn" id="scrolldown_btn" src="/public/mobile/images/checkin/scrolldown_gray.png" alt="">
+		</div>
+		<!-- 兑换版块 -->
+		<div class="bottom_half">
+			<div class="select_bar">
+				<div class="select_item active" data-tab="duihuan">金币兑换中心</div>
+				<div class="select_item" data-tab="prize_list">已抽中的奖品</div>
+			</div>
+			<!-- 兑换中心 -->
+			<div class="prize_list">
+				<div class="prize_item raffle_link" id="raffle_link"></div>
+				<div class="prize_item prize_bag"></div>
+			</div>
+			<!-- 已兑换列表 -->
+			<div class="achieved_list">
+				<div class="achieved_item">
+					是短发是
+				</div>
+				<div class="achieved_item">
+					是短发是
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 关闭弹窗按钮 -->
+	<!-- <div class="close_dialog_btn"></div> -->
+
+	<!-- 规则弹框 -->
+	<div class="rule_box dialog_box" id="rule_box">
+		<div class="title">活动规则</div>
+		<ul class="rule_content">
+			<li>参与签到可以获得相应积分。每连续签满7天，可获得一次金蛋内的随机积分。如签到终端，则签到重新开始。</li>
+			<li>积分可以兑换，也可以参与抽奖。兑换和抽奖行为不可撤销。</li>
+			<li>兑换的代金券自动放入您的账户内，兑换记录也会展示您兑换的可用代金券。抽奖抽中代金券和积分以外的物品，工作人员将会在3个工作日内联系您，并在7个工作日内为您寄送物品。</li>
+			<li>签到活动中兑换和抽奖所获得的代金券仅限定期理财产品使用，有效期详见每张代金券说明。</li>
+			<li>抽奖环节的中奖奖品不开具相应的发票，不可折现。如无质量问题，不支持退换。</li>
+			<li>本期签到和抽奖积分有效期截止到2016年12月31日。</li>
+		</ul>
+		<img class="down_icon" src="/public/mobile/images/checkin/scroll_down_icon.png" alt="">
+		<!-- close btn -->
+		<span class="dialog_close_btn"></span>
+	</div>
+
+	<!-- 收货地址编辑弹窗 -->
+	<div class="receive_info_box dialog_box">
+		<div class="title">请填写收货地址</div>
+		<div class="edit_content">
+			<div class="input_group">
+				<label for="receive_name">收货人:</label>
+				<input type="text" value="哈哈哈">
+			</div>
+			<div class="input_group">
+				<label for="receive_name">联系电话:</label>
+				<input type="text" value="15507607358">
+			</div>
+			<div class="input_group">
+				<label for="receive_name">收货人地址:</label>
+				<textarea name="" id="" placeholder="请输入详细地址..."></textarea>
+			</div>
+
+			<button class="sub_btn">确定提交</button>
+		</div>
+
+		<span class="dialog_close_btn"></span>
+	</div>
+
+	<!-- 未连续签到提示 -->
+	<div class="continuous_notice_box dialog_box" id="continuous_notice_box">
+
+		<div class="notice_top_half">
+			<p>
+				<img src="/public/mobile/images/checkin/bad_mood.png" alt="">
+				很遗憾...
+			</p>
+			<p>
+				您未能<span class="purple_word">连续签到</span>
+			</p>
+			<p>将退回起点重新开始</p>
+		</div>
+		<div class="notice_bottom_half">
+			<img src="/public/mobile/images/checkin/check_in_icon.png" alt="">
+			打开右上角签到提醒，就不怕忘记啦!
+		</div>
+
+		<span class="dialog_close_btn"></span>
+	</div>
+
+<!-- 	<script src="./sources/scripts/jquery-3.1.0.min.js"></script>
+	<script src="./sources/scripts/common.js"></script>
+	<script src="./sources/scripts/setRem.js"></script>
+	<script src="./sources/scripts/index.js"></script>
+	<script src="./sources/scripts/layer.js"></script> -->
+
+	<script src="/public/mobile/js/jquery-3.1.0.min.js"></script>
+	<script src="/public/mobile/js/layer.js"></script>
+	<script src="/public/mobile/js/setRem.js"></script>
+	<script src="/public/mobile/js/web/common.js"></script>
+	<script src="/public/mobile/js/checkin/index.js"></script>
+</body>
+</html>

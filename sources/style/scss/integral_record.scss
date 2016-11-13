@@ -1,0 +1,34 @@
+@import './init.scss';
+
+.body_content{
+	padding:0.02rem;
+}
+.record_table{
+	width:100%;
+	border-color:$goldden;
+  border-collapse: collapse;
+	tr{
+		th{
+			font-size:0.16rem;
+			padding:0.05rem;
+			color:$goldden;
+		}
+		td{
+			text-align: center;
+			padding:0.02rem;
+			font-size: 0.12rem;
+			color:#333;
+			p{
+				text-align:center;
+			}
+		}
+
+		.status_fail{
+			color:#888;
+		}
+		.status_success{
+			color:$goldden;
+		}
+	}
+
+}
