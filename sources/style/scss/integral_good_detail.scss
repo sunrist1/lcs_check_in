@@ -107,3 +107,63 @@ body{
 	color:#fff;
 	border-radius:0.5rem;
 }
+
+.exchange_btn_disable{
+	background-color:#aaa!important;
+}
+
+.dialog_close_btn{
+  background: url(/public/mobile/images/checkin/gray_close_btn.png) 45% 0px no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  z-index: 131;
+  right: 2%;
+  top: 5%;
+  height: 1rem;
+  width: 1rem;
+
+}
+
+.success_ask{
+  display: none;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border: 1px solid #eee;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  min-height: 100px;
+  box-shadow: 0px 0px 2px 3px #eee;
+
+  >h2{
+    line-height: 4rem;
+    text-align: center;
+  }
+  .opera_bottom{
+  	font-size: 0px;
+  	>a{
+			display: inline-block;
+	    width: 44%;
+	    font-size: 0.8rem;
+	    text-align: center;
+	    min-height: 1rem;
+	    line-height: 1rem;
+	    background: #eee;
+	    margin: 0px 3%;
+	    padding: 0.3rem;
+	    box-sizing: border-box;
+	    border-radius: 0.3rem;
+  	}
+  	.left{
+  		background-color:#aaa;
+  		color:#fff;
+  	}
+  	.right{
+  		background-color:$goldden;
+  		color:#fff;
+  	}
+  }
+}

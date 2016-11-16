@@ -3,26 +3,27 @@ $(function(){
 		$(".shop_item").removeClass('active')
 		$(this).addClass('active');
 
-		$(".goods_list").empty()
+		// $(".goods_list").empty()
 
 		var type = $(this).data('type')
-		getShopData(type)
-		// $('.goods_item').hide()
-		// $('.'+type).show();
+		// getShopData(type)
+		$('.goods_item').hide()
+		$('.'+type).show();
 	})
 
 	getShopData('shop_buy_card')
+	getShopData('cash_ticket')
+	getShopData('gold_bar')
+	getShopData('other')
 
-	// 隐藏不需显示的商品
-	$(".cash_ticket").hide()
-	$('.gold_bar').hide()
 })
 
 // 拼装列表html   列表太简单了，费事用模板库了
 function listItem(type,data){
 	if("cash_ticket"===type){
 		data.forEach(function(item){
-			var htmlStr = '<a href="/views/integral_shop/integral_good_detail.html?type='+type+'&dataId='+item.id+'" class="goods_item cash_ticket">'+
+			var linkStr = "?dataId="+item.id+"&goodName="+item.name+"&img="+item.imgUrl+"&cost="+item.needCoinCount+"&max="+item.maxExChangeCount
+			var htmlStr = '<a href="/views/integral_shop/integral_good_detail.html'+linkStr+'" class="goods_item cash_ticket '+type+'">'+
 				'<div class="ticket_img">'+
 					'<img src="'+item.imgUrl+'" alt="">'+
 					'<span class="ticket_num">'+item.name+'</span>'+
@@ -35,7 +36,8 @@ function listItem(type,data){
 		})
 	}else{
 		data.forEach(function(item){
-			var htmlStr = '<a href="/views/integral_shop/integral_good_detail.html?type='+type+'&dataId='+item.id+'" class="goods_item shop_buy_card">'+
+			var linkStr = "?dataId="+item.id+"&goodName="+item.name+"&img="+item.imgUrl+"&cost="+item.needCoinCount+"&max="+item.maxExChangeCount
+			var htmlStr = '<a href="/views/integral_shop/integral_good_detail.html'+linkStr+'" class="goods_item '+type+'">'+
 				'<img src="'+item.imgUrl+'" alt="">'+
 				'<p class="name">'+item.name+'</p>'+
 				'<p class="coin_cost">'+item.needCoinCount+'金币</p>'+
@@ -82,8 +84,15 @@ function getShopData(type){
 		data:reqData,
 		errorHandler:true,
 		success:function(data){
-			console.log(data)
 			listItem(type,data.data.list)
+
+			var cls = '.'+type+'_item span';
+
+			$(cls).text(data.data.list.length)
+
+			// 隐藏不需显示的商品
+			$(".cash_ticket").hide()
+			$('.gold_bar').hide()
 		}
 	})
 }

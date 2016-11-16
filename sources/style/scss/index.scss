@@ -186,6 +186,11 @@
 	color:$scarlet;
 }
 
+.haveChecked{
+	background-color:#eee!important;
+	color:#888!important;
+}
+
 .scrolldown_btn{
 	display:block;
 	margin:0.2rem auto;
@@ -242,26 +247,58 @@
 			display: inline-block;
 			width:48%;
 			height: 1rem;
-			background-color:#fff;
+			background-color:$light_yellow;
+	    text-align: center;
+	    line-height: 1rem;
+      margin-bottom: 0.08rem;
 
 			&:nth-of-type(2n){
 				margin-left: 4%;
+			}
+
+			.prize_img{
+				width:45%;
+				vertical-align: middle;
+			}
+			.prize_name{
+				display: inline-block;
+				vertical-align: middle;
+				color:$bg_purple;
+				font-size: 0.15rem;
+				width: 50%;
+				font-weight:600;
+				line-height: 0.151rem;
+
+				.edit_btn{
+			    background-color: #ff6801;
+			    color: #fff;
+			    border-radius: 0.1rem;
+			    box-shadow: none;
+			    padding: 0.03rem 0.05rem;
+			    margin-top: 0.05rem;
+			    display: block;
+			    font-size: 0.12rem;
+				}
+				.sending{
+			    @extend .edit_btn;
+	        color: #888;
+			    background: none!important;
+				}
 			}
 		}
 	}
 } 
 
 .dialog_close_btn{
-  background: url(/public/mobile/images/checkin/close_btn.png) 45% 0px no-repeat;
+	background: url(/public/mobile/images/checkin/close_btn.png) 50% 0px no-repeat;
   background-size: contain;
   display: inline-block;
   position: absolute;
   bottom: -0.7rem;
   z-index: 131;
   height: 0.35rem;
-  width: 50%;
-  transform: translateX(-50%);
-  left: 50%;
+  width: 100%;
+  left: 0%;
 }
 
 .rule_box{

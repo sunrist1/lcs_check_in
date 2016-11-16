@@ -5,12 +5,22 @@ $(function(){
 		cost:GetRequest().cost,
 		name:GetRequest().goodName,
 		dataId:GetRequest().dataId,
-		max:GetRequest().max
+		// max:GetRequest().max
 	}
 	$(".good_name").text(goodInfo.name)
 	$(".good_cost").text(goodInfo.cost+"金币")
 	$(".img_model img").attr('src',goodInfo.imgUrl)
-	$(".maxExChangeCount").val(goodInfo.max)
+	// $(".maxExChangeCount").val(goodInfo.max)
+
+	// 获取用户金币数
+	getCoins();
+
+	// 用户金币不足，不允许兑换
+	if($(".maxExChangeCount").val()<goodInfo.cost){
+		$("#exchange_btn").attr('disabled','true')
+		$("#exchange_btn").addClass("exchange_btn_disable")
+		$("#exchange_btn").text("积分不够，无法兑换")
+	}
 
 	// 兑换按钮点击，校验兑换人信息
 	$("#exchange_btn").on('click',function(){
@@ -76,7 +86,9 @@ $(function(){
 			success:function(data){
 				
 				if(1==data.status){
-					layer.msg('兑换成功！')
+					showCover()
+					htmlScroll()
+					$(".success_ask").fadeIn();
 				}
 			}
 		})
@@ -85,7 +97,11 @@ $(function(){
 
 // 获取最新的用户金币数
 function getCoins(){
-	var userId = JSON.parse(localStorage.userInfo).userID;
+	var userId = 0;
+
+	if(localStorage.userInfo){
+		userId = JSON.parse(localStorage.userInfo).userID
+	}
 
 	var reqData = {
 		code:"getMyPointsInfo",
@@ -99,7 +115,7 @@ function getCoins(){
 		data:reqData,
 		errorHandler:true,
 		success:function(data){
-			var maxPoints = data.data.list[0].totalPoints;
+			var maxPoints = data.data.list[0].availablePoints;
 
 			$(".coins_sum .cherry_red").text(maxPoints)
 			$("#maxExChangeCount").val(maxPoints)

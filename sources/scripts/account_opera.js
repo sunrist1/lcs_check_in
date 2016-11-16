@@ -5,22 +5,26 @@ $(function(){
 	$("#go_reg").on('click',function(){
 		leaveCenter($(".login_content"))
 		goCenter($('.reg_content'))
+		registerVerify()
 	})
 
 	$("#go_login").on('click',function(){
 		leaveCenter($(".reg_content"))
 		goCenter($('.login_content'))
+		loginVerify()
 	})
 
 	$("#go_fgpw").on('click',function(){
 		leaveCenter($(".login_content"))
 		goCenter($('.fgpw_content'))
+		$(".fgpw_form .verify_code").attr('src','/mobile/code?code=register&v='+Math.random())
 	})
 
 	$(".back_btn").on("click",function(){
 		leaveCenter($(".reg_content"))
 		leaveCenter($(".fgpw_content"))
 		goCenter($('.login_content'))
+		loginVerify()
 	})
 })
 
@@ -73,16 +77,6 @@ $(".fgpw_form .verify_code").on('click',function(){
 	$(".fgpw_form .verify_code").attr('src','/mobile/code?code=register&v='+Math.random())
 })
 
-// =============验证码输入框聚焦时，刷新验证码============
-$(".login_content .verify_code_text").on('focus',function(){
-	loginVerify()
-})
-$(".register_form .verify_code_text").on('focus',function(){
-	registerVerify()
-})
-$(".fgpw_form .verify_code_text").on('focus',function(){
-	$(".fgpw_form .verify_code").attr('src','/mobile/code?code=register&v='+Math.random())
-})
 
 /*
 *  用户登录注册功能
@@ -142,8 +136,6 @@ $('#goRegister').on('click',function(){
 		}
 	}
 
-	// data = JSON.stringify(data)
-
 	request({
 		url:'/mobile/api/appService',
 		data:data,
@@ -151,6 +143,8 @@ $('#goRegister').on('click',function(){
 		success:function(data){
 			if(1===data.status){
 				layer.msg("注册成功。")
+				leaveCenter($(".reg_content"))
+				goCenter($('.login_content'))
 			}else{
 				layer.msg(data.msg)
 			}
@@ -288,6 +282,12 @@ function resetPwd(){
 		errorHandler:true,
 		success:function(data){
 			layer.msg(data.msg)
+
+			if(1==data.status){
+				// 重置密码后，转回登录界面
+				leaveCenter($(".fgpw_content"))
+				goCenter($('.login_content'))
+			}
 		}
 	})
 }

@@ -15,13 +15,13 @@
 			<div class="top_bar">
 				<img id="ruleImg" class="ruleImg" src="/public/mobile/images/checkin/rule_icon.png" alt="">
 
-				<div class="notice_set">
+				<!-- <div class="notice_set">
 					<label for="notice_btn">签到提醒</label>
 					<input type="checkbox" name="notice_btn" id="notice_btn">
 					<label for="notice_btn" class="btn_group">
 						<div class="circle"></div>
 					</label>
-				</div>	
+				</div> -->	
 			</div>
 
 			<img class="check_logo" src="/public/mobile/images/checkin/check_logo.png" alt="">
@@ -44,7 +44,7 @@
 					<img src="/public/mobile/images/checkin/coins_5.png" alt="">
 					<p>第3天</p>
 				</div>
-				<div class="day_item box" data-coins="15">
+				<div class="day_item box day-7" data-coins="15">
 					<img src="/public/mobile/images/checkin/gold_egg.png" alt="">
 					<p>第7天</p>
 				</div>
@@ -65,7 +65,7 @@
 			<!-- 我的金币 -->
 			<div class="myCoins">
 				我的金币
-				<span class="coin_num">100</span>
+				<span class="coin_num"></span>
 				<img id="coin_increse_des" src="/public/mobile/images/checkin/coin.png" alt="">
 			</div>
 			<!-- 立即签到 -->
@@ -83,16 +83,11 @@
 			<!-- 兑换中心 -->
 			<div class="prize_list">
 				<div class="prize_item raffle_link" id="raffle_link"></div>
-				<div class="prize_item prize_bag"></div>
+				<!-- <div class="prize_item prize_bag"></div> -->
 			</div>
 			<!-- 已兑换列表 -->
 			<div class="achieved_list">
-				<div class="achieved_item">
-					是短发是
-				</div>
-				<div class="achieved_item">
-					是短发是
-				</div>
+
 			</div>
 		</div>
 	</div>
@@ -120,20 +115,21 @@
 	<div class="receive_info_box dialog_box">
 		<div class="title">请填写收货地址</div>
 		<div class="edit_content">
+			<input type="hidden" id="lottotyId" value="">
 			<div class="input_group">
 				<label for="receive_name">收货人:</label>
-				<input type="text" value="哈哈哈">
+				<input type="text" id="receiver_name" value="">
 			</div>
 			<div class="input_group">
 				<label for="receive_name">联系电话:</label>
-				<input type="text" value="15507607358">
+				<input type="text" id="receiver_phone" value="">
 			</div>
 			<div class="input_group">
 				<label for="receive_name">收货人地址:</label>
-				<textarea name="" id="" placeholder="请输入详细地址..."></textarea>
+				<textarea name="" id="receiver_addr" placeholder="请输入详细地址..."></textarea>
 			</div>
 
-			<button class="sub_btn">确定提交</button>
+			<button class="sub_btn" id="receiver_edit_btn">确定提交</button>
 		</div>
 
 		<span class="dialog_close_btn"></span>

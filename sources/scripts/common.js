@@ -24,7 +24,13 @@ function request(setting){
 		}else{
 			xhr.setRequestHeader("deviceId", "web_"+new Date().getTime());
 	    xhr.setRequestHeader("device", "1");
-	    xhr.setRequestHeader("token", localStorage.token);
+	    // xhr.setRequestHeader("token", localStorage.token);
+	    if(GetRequest().token){
+	    	localStorage.token = GetRequest().token;
+	    	xhr.setRequestHeader("token", GetRequest().token);
+	    }else if(localStorage.token){
+	    	xhr.setRequestHeader("token", localStorage.token);
+	    }
 		}
 	}
 
@@ -38,12 +44,12 @@ function request(setting){
 			_success && (typeof _success === 'function') && _success(data,textStatus,xhr)
 		}else{
 			setting.errorHandler && showErr(data.msg)
-			_error && (typeof _error === 'function') && _error(xhr,jsonObc)
 
 			// 当返回status是0时，为未登录，跳登录页
-			if(data.msg.indexOf("未登陆")>0){
+			if(data.msg.indexOf("未登录")>=0){
 				window.location.href="/views/account/account_opera.html"
 			}
+			_error && (typeof _error === 'function') && _error(xhr,jsonObc)
 		}
 	};
 
@@ -94,7 +100,9 @@ function GetRequest() {
 		var str = url.substr(1); 
 		var strs = str.split("&"); 
 		for(var i = 0; i < strs.length; i ++) { 
-			theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]); 
+			var pos = strs[i].indexOf("=");
+			// theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]); 
+			theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].substr(pos+1)); 
 		} 
 	} 
 	return theRequest; 

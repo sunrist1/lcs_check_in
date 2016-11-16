@@ -58,6 +58,13 @@
 					text-align:center;
 					background-color:#fff;
 					border-radius:0.05rem;
+					overflow: hidden;
+			    box-sizing: border-box;
+					img{
+						height: 100%;
+						width:100%;
+				    vertical-align: top;
+					}
 				}
 
 				.gray_cover{
@@ -151,6 +158,96 @@
 	}
 }
 
+// reciever info
+.receive_info_box{
+	display:none;
+	position:fixed;
+	z-index:100;
+	width:80%;
+	left:10%;
+	top:15%;
+	background-color:#fff;
+	border-radius:0.1rem;
+	box-sizing:border-box;
+
+	.edit_content{
+		padding-bottom:0.1rem;
+	}
+
+	.title{
+		background-color:#eee;
+		font-size:0.18rem;
+		min-height: 0.4rem;
+		line-height:0.4rem;
+		text-align: center;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+
+    .prize_text{
+    	line-height: 0.3rem;
+    	color:$cherry_red;
+	    display: block;
+    }
+	}
+
+	.title_text{
+		font-size: 0.14rem;
+		padding:0.05rem;
+    margin-left: 0.05rem;
+	}
+
+	.input_group{
+    font-size: 0.15rem;
+    margin: 0 0.1rem;
+    border-top: 1px solid #eee;
+    line-height: 0.20rem;
+    padding: 0.05rem 0;
+
+		label{
+			display: inline-block;
+			min-width:0.6rem;
+		}
+		input{
+			vertical-align: top;
+			border:none;
+			font-size: 0.15rem;
+			width:50%;
+		}
+		textarea{
+	    border: 1px solid #eee;
+	    width: 95%;
+	    height: 1rem;
+	    resize: none;
+	    font-size: 0.15rem;
+	    margin-top:0.05rem;
+		}
+	}
+
+	.sub_btn{
+		width:90%;
+		margin:0px auto;
+		height: 0.3rem;
+		display: block;
+		border:none;
+		border-radius:0.05rem;
+		background-color:$cherry_red;
+		color:#fff;
+		font-size: 0.15rem;
+	}
+}
+
+.dialog_close_btn{
+	background: url(/public/mobile/images/checkin/close_btn.png) 50% 0px no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  bottom: -0.7rem;
+  z-index: 131;
+  height: 0.35rem;
+  width: 100%;
+  left: 0%;
+}
+
 // spin stars
 .star_item{
 	width:0.1rem;
@@ -169,3 +266,4 @@
 .biling{
 	@include transform(rotateY(180deg))
 }
+

@@ -16,10 +16,10 @@
 		<div class="raffle_box">
 			<div class="top_bar">
 				<div class="item">
-					我的金币:<span class="yellow_b_word">100</span>
+					我的金币:<span id="userCoins" class="yellow_b_word"></span>
 				</div>
 				<div class="item">
-					今日可玩:<span class="yellow_b_word">3</span>次
+					今日可玩:<span id="syCount" class="yellow_b_word">3</span>次
 				</div>
 			</div>
 			
@@ -27,15 +27,15 @@
 			<!-- 抽奖转盘 -->
 			<div class="raffle_content" id="raffle_content">
 				<div class="raffle_pan" id="raffle_pan">
-					<div class="award_item award_item_0 gray_cover" data-name="iphone7手机" data-arard="1"></div>
-					<div class="award_item award_item_1 gray_cover" data-name="100积分" data-arard="2"></div>
-					<div class="award_item award_item_2 gray_cover" data-name="奖品1" data-arard="3"></div>
-					<div class="award_item award_item_7 gray_cover" data-name="奖品2" data-arard="8"></div>
+					<div class="award_item award_item_0 gray_cover"></div>
+					<div class="award_item award_item_1 gray_cover"></div>
+					<div class="award_item award_item_2 gray_cover"></div>
+					<div class="award_item award_item_7 gray_cover"></div>
 					<button id="raffle_btn" class="raffle_btn">立即<br/>抽奖</button>
-					<div class="award_item award_item_3 gray_cover" data-name="奖品3" data-arard="4"></div>
-					<div class="award_item award_item_6 gray_cover" data-name="随机积分" data-arard="7"></div>
-					<div class="award_item award_item_5 gray_cover" data-name="奖品4" data-arard="6"></div>
-					<div class="award_item award_item_4 gray_cover" data-name="奖品5" data-arard="5"></div>
+					<div class="award_item award_item_3 gray_cover"></div>
+					<div class="award_item award_item_6 gray_cover"></div>
+					<div class="award_item award_item_5 gray_cover"></div>
+					<div class="award_item award_item_4 gray_cover"></div>
 				</div>
 			</div>
 		</div>
@@ -61,6 +61,31 @@
 		<div class="prize_get_show dialog_box" id="prize_get_shows">
 			<p class="prize_text">抽中50个金币</p>
 			<img class="prize_get_btn dialog_close_btn" src="/public/mobile/images/checkin/raffle_check_btn.png" alt="">
+		</div>
+
+
+		<!-- 收货地址编辑弹窗 -->
+		<div class="receive_info_box dialog_box">
+			<div class="title">恭喜你抽中了<span class="prize_text"></span></div>
+			<div class="edit_content">
+				<p class="title_text">请填写收货信息:</p>
+				<div class="input_group">
+					<label for="receiver_name">收货人:</label>
+					<input type="text" id="receiver_name" value="">
+				</div>
+				<div class="input_group">
+					<label for="receiver_phone">联系电话:</label>
+					<input type="text" id="receiver_phone" value="">
+				</div>
+				<div class="input_group">
+					<label for="receive_name">收货人地址:</label>
+					<textarea name="" id="receiver_addr" placeholder="请输入详细地址..."></textarea>
+				</div>
+
+				<button class="sub_btn" id="exChangeBtn">确定提交</button>
+			</div>
+
+			<span class="dialog_close_btn"></span>
 		</div>
 	</div>
 
